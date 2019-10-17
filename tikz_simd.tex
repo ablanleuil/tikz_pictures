@@ -1,38 +1,38 @@
-      \begin{tikzpicture}
 
-        \node[draw,rotate=90,fill=blue!40,text width=3.5cm,align=center] (data) at (-3,1.5)
-          {Memoire};
-        \node[draw,fill=green!40,text width=3.5cm,align=center] (instrs) at (-0.5,4) {Instructions};
 
-        \coordinate (q1x) at ($(instrs.west)!0.5!(instrs.east)$);
-        \coordinate (q2x) at ($(instrs.west)!0.5!(instrs.east)$);
-        \coordinate (q3x) at ($(instrs.west)!0.5!(instrs.east)$);
-        \coordinate (q4x) at ($(instrs.west)!0.5!(instrs.east)$);
+\begin{tikzpicture}
+  \node[draw,rotate=90,fill=blue!40,text width=3.5cm,align=center] (data) at (-3,1.5) {Memoire};
+  \node[draw,fill=green!40,text width=3.5cm,align=center] (instrs) at (-0.5,4) {Instructions};
 
-        \coordinate (q1y) at ($(data.west)!0.2!(data.east)$);
-        \coordinate (q2y) at ($(data.west)!0.4!(data.east)$);
-        \coordinate (q3y) at ($(data.west)!0.6!(data.east)$);
-        \coordinate (q4y) at ($(data.west)!0.8!(data.east)$);
+  \coordinate (q1x) at ($(instrs.west)!0.5!(instrs.east)$);
+  \coordinate (q2x) at ($(instrs.west)!0.5!(instrs.east)$);
+  \coordinate (q3x) at ($(instrs.west)!0.5!(instrs.east)$);
+  \coordinate (q4x) at ($(instrs.west)!0.5!(instrs.east)$);
 
-        \coordinate (p1) at (q1x |- q1y);
-        \coordinate (p2) at (q2x |- q2y);
-        \coordinate (p3) at (q3x |- q3y);
-        \coordinate (p4) at (q4x |- q4y);
+  \coordinate (q1y) at ($(data.west)!0.2!(data.east)$);
+  \coordinate (q2y) at ($(data.west)!0.4!(data.east)$);
+  \coordinate (q3y) at ($(data.west)!0.6!(data.east)$);
+  \coordinate (q4y) at ($(data.west)!0.8!(data.east)$);
 
-        \node[draw,fill=pink] (pu1) at (p1) {PU};
-        \node[draw,fill=pink] (pu2) at (p2) {PU};
-        \node[draw,fill=pink] (pu3) at (p3) {PU};
-        \node[draw,fill=pink] (pu4) at (p4) {PU};
+  \coordinate (p1) at (q1x |- q1y);
+  \coordinate (p2) at (q2x |- q2y);
+  \coordinate (p3) at (q3x |- q3y);
+  \coordinate (p4) at (q4x |- q4y);
 
-        \coordinate (right) at ($(pu4.east)!0.5!(pu1.east -| instrs.east)$);
+  \node[draw,fill=pink] (pu1) at (p1) {PU};
+  \node[draw,fill=pink] (pu2) at (p2) {PU};
+  \node[draw,fill=pink] (pu3) at (p3) {PU};
+  \node[draw,fill=pink] (pu4) at (p4) {PU};
 
-        \draw[-latex] (instrs.south -| right) |- (pu1.east);
-        \draw[-latex] (instrs.south -| right) |- (pu2.east);
-        \draw[-latex] (instrs.south -| right) |- (pu3.east);
-        \draw[-latex] (instrs.south -| right) |- (pu4.east);
+  \coordinate (right) at ($(pu4.east)!0.5!(pu1.east -| instrs.east)$);
 
-        \draw[-latex] (data.south |- pu1.west) -- (pu1);
-        \draw[-latex] (data.south |- pu2.west) -- (pu2);
-        \draw[-latex] (data.south |- pu3.west) -- (pu3);
-        \draw[-latex] (data.south |- pu4.west) -- (pu4);
-      \end{tikzpicture}
+  \draw[-latex] (instrs.south -| right) |- (pu1.east);
+  \draw[-latex] (instrs.south -| right) |- (pu2.east);
+  \draw[-latex] (instrs.south -| right) |- (pu3.east);
+  \draw[-latex] (instrs.south -| right) |- (pu4.east);
+
+  \draw[-latex] (data.south |- pu1.west) -- (pu1);
+  \draw[-latex] (data.south |- pu2.west) -- (pu2);
+  \draw[-latex] (data.south |- pu3.west) -- (pu3);
+  \draw[-latex] (data.south |- pu4.west) -- (pu4);
+\end{tikzpicture}
